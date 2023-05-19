@@ -33,7 +33,8 @@ window.addEventListener('message', (event) => {
       if (event.data.data) {
         for (let [index, itemData] of Object.entries(event.data.data)) {
           if (itemData !== null) {
-            createOptions(index + 1, itemData);
+            index++;
+            createOptions(index, itemData);
           }
         }
       }
