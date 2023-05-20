@@ -11,8 +11,8 @@ window.addEventListener('message', (event) => {
   switch (event.data.event) {
     
     case 'visible': {
-      if (event.data.state) {
-        if (eye.hasChildNodes()) eye.removeChild(icon);
+      if (event.data.state) { 
+        eye.innerHTML = ""; 
         eye.classList.remove("active");
       }
       body.style.visibility = event.data.state ? 'visible' : 'hidden';
@@ -20,7 +20,7 @@ window.addEventListener('message', (event) => {
     }
 
     case 'leftTarget': {
-      if (eye.hasChildNodes()) eye.removeChild(icon);
+      eye.innerHTML = "";
       eye.classList.remove("active");
       return (eye.style.fill = 'black');
     }

@@ -14,13 +14,14 @@ window.addEventListener('message', (event) => {
       return;
     }
     case 'closeTarget': {
+      eye.innerHTML = "";
       body.style.visibility = 'hidden';
       return;
     }
 
     case 'leftTarget': {
-      if (eye.hasChildNodes()) eye.removeChild(icon);
-      eye.classList.remove('active');
+      eye.innerHTML = "";
+      eye.classList.remove("active");
       return;
     }
 
