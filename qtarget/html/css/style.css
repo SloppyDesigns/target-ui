@@ -144,6 +144,10 @@ p {
   left:60px !important;
 }
 
+#options-wrapper li:nth-last-child(n+3):nth-last-child(-n+3):first-child~li:last-child {
+  left:-20px;
+}
+
 #options-wrapper li:nth-child(odd) {
   text-align: right;
   right: 60px;
