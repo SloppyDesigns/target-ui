@@ -3,7 +3,7 @@ import { createOptions } from './createOptions.js';
 const optionsWrapper = document.getElementById('options-wrapper');
 const body = document.body;
 const eye = document.getElementById('eye');
-let icon = null;
+const eyeicon = document.getElementById("eyeicon");
 
 window.addEventListener('message', (event) => {
   optionsWrapper.innerHTML = '';
@@ -14,23 +14,20 @@ window.addEventListener('message', (event) => {
       return;
     }
     case 'closeTarget': {
-      eye.innerHTML = "";
+      eyeicon.style.visibility = "hidden";
       body.style.visibility = 'hidden';
       return;
     }
 
     case 'leftTarget': {
-      eye.innerHTML = "";
+      eyeicon.style.visibility = "hidden";
       eye.classList.remove("active");
       return;
     }
 
     case 'foundTarget': {
-      eye.style.fill = '#cfd2da';
       eye.classList.add('active');
-      icon = document.createElement('i');
-      icon.className = 'fa-sm fa-solid fa-xmark';
-      eye.appendChild(icon);
+      eyeicon.style.visibility = "visible";
       return;
     }
 
